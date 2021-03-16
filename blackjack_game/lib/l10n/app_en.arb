@@ -1,3 +1,61 @@
 {
-  "gameTitle": "Blackjack Trainer"
+	"gameTitle": "Blackjack Trainer",
+	"@gameTitle": {
+		"description": "The app name in the app bar.",
+		"type": "text"
+	},
+	"gameWelcome": "Welcome to Blackjack!",
+	"@gameWelcome": {
+		"description": "Welcome text for the start screen.",
+		"type": "text"
+	},
+	"playerBalance": "Player Balance: \\$$balance",
+	"@playerBalance": {
+		"description": "Text for player balance.",
+		"type": "text"
+	},
+	"numberOfDecks": "Number of decks: $decks",
+	"@numberOfDecks": {
+		"description": "Display the number of decks.",
+		"type": "text"
+	},
+	"shufflePercent": "Shuffle the deck at $percent%",
+	"@shufflePercent": {
+		"description": "Display the shuffle point, in percent.",
+		"type": "text"
+	},
+	"dealSpeed": "Deal $speed cards per second",
+	"@dealSpeed": {
+		"description": "Display the deal animation speed.",
+		"type": "text"
+	},
+	"playGameLabel": "Play Game",
+	"@playGameLabel": {
+		"description": "Label for Play Game button.",
+		"type": "text"
+	},
+	"gameRulesLabel": "Rules of Blackjack",
+	"@gameRulesLabel": {
+		"description": "Label for game rules button.",
+		"type": "text"
+	},
+	"settingsLabel": "Settings",
+	"@settingsLabel": {
+		"description": "Label for settings button.",
+		"type": "text"
+	},
+	"gameRulesText": "The goal of Blackjack is to play a hand with a higher value than the dealer's hand, without going over 21. The players and dealer each receive two cards to start, with only one of the dealer's cards visible. All cards count at their face value, with Jack, Queen, and King counting as 10, and Ace counting as either 1 or 11. A hand with an Ace and a 10-value card is called Blackjack and pays 3 to 2.\n\nThe player wins the value of their bet if their hand has a higher value than the dealer, loses the bet if their hand has a lower value, and keeps the original bet if they're the same, called a \"push\".\n\nIf the dealer's visible card is an Ace, you can buy insurance against the dealer having Blackjack. This is a side bet of up to half of your current bet, and pays 2 to 1 if the dealer has Blackjack.\n\nFor each deal, you can \"hit\" to add another card, \"stand\" if you're satisfied with your hand, or \"double down\" to increase your bet by up to 100% in return for receiving exactly one more card. If your first two cards have the same value, you can \"split\" them into two hands, which doubles your bet. A second card is dealt for each of the two hands, and you can play each one separately.\n\nThe dealer always hits until their hand is 17 or higher. The dealer will also hit on \"soft 17\" (a hand containing an Ace and cards adding up to 6, for a total of 17 or 7), but this rule can be changed in Settings.",
+	"@gameRulesText": {
+		"description": "Rules of Blackjack, for Rules screen.",
+		"type": "text"
+	},
+	"dealerHitsSoft17": "Dealer hits soft 17",
+	"dealerStandsSoft17": "Dealer stands on soft 17",
+	"settingNumDecksLabel": "Number of decks",
+	"settingShufflePercent": "Shuffle the deck at",
+	"settingResetBalance": "Reset balance",
+	"playButtonHit": "Hit",
+	"playButtonStand": "Stand",
+	"playButtonDouble": "Double Down",
+	"playButtonSplit": "Split"
 }

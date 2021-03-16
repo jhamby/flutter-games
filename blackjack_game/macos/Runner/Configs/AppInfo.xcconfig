@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = blackjack_game
+PRODUCT_NAME = Blackjack
 
 // The application's bundle identifier
 PRODUCT_BUNDLE_IDENTIFIER = com.jakehamby.blackjackGame
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2021 com.jakehamby. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2021 Jake Hamby. MIT License.

@@ -1,3 +1,21 @@
 {
-  "gameTitle": "Entrenadora de blackjack"
+	"gameTitle": "Entrenadora de blackjack",
+	"dealSpeed": "Repartir $speed de velocidad por segundo",
+	"gameRulesLabel": "Reglas del Blackjack",
+	"gameRulesText": "El objetivo del Blackjack es jugar una mano con un valor más alto que la mano del crupier, sin pasar de 21. Los jugadores y el crupier reciben cada uno dos cartas para comenzar, con solo una de las cartas del crupier visible. Todas las cartas cuentan por su valor nominal, con Jota, Reina y Rey contando como 10, y As contando como 1 u 11. Una mano con un As y una carta de valor 10 se llama Blackjack y paga 3 a 2.\n\nEl jugador gana el valor de su apuesta si su mano tiene un valor más alto que el del crupier, pierde la apuesta si su mano tiene un valor más bajo y mantiene la apuesta original si son iguales.\n\nSi la carta visible del crupier es un As, puede comprar un seguro para que el crupier no tenga Blackjack. Esta es una apuesta adicional de hasta la mitad de su apuesta actual y paga 2 a 1 si el crupier tiene Blackjack.\n\nPara cada trato, puede \"pedir\" para agregar otra carta, \"plantarse\" si está satisfecho con su mano o \"doblar\" para aumentar su apuesta hasta en un 100% a cambio de recibir exactamente una carta más. Si sus dos primeras cartas tienen el mismo valor, puede \"separarlas\" en dos manos, lo que duplica su apuesta. Se reparte una segunda carta para cada una de las dos manos, y puede jugar cada una por separado.\n\nEl crupier siempre pide hasta que su mano sea 17 o más. El crupier también solicitará un \"17 suave\" (una mano que contiene un As y cartas que suman 6, para un total de 17 o 7), pero esta regla se puede cambiar en Configuración.",
+	"gameWelcome": "¡Bienvenido al Blackjack!",
+	"numberOfDecks": "Número de mazos: $mazos",
+	"playGameLabel": "Jugar un juego",
+	"playerBalance": "Saldo del jugador: \\ $$balance",
+	"settingsLabel": "Ajustes",
+	"shufflePercent": "Baraja la baraja al $percent%",
+	"dealerHitsSoft17": "El crupier golpea suave 17",
+	"dealerStandsSoft17": "El crupier se para en 17 suave",
+	"settingNumDecksLabel": "Numero de mazos",
+	"settingShufflePercent": "Baraja la baraja al",
+	"settingResetBalance": "Restablecer saldo",
+	"playButtonHit": "Pedir",
+	"playButtonStand": "Plantarse",
+	"playButtonDouble": "Doblar",
+	"playButtonSplit": "Separarlas"
 }
