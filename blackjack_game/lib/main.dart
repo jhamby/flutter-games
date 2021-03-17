@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:intl/message_format.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  // This widget is the root of the app.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,94 +25,166 @@ class MyApp extends StatelessWidget {
         const Locale('fr', ''), // French, no country code
         // add additional locales here
       ],
-      title: 'Flutter Demo',
+      title: 'Blackjack',   // TODO: where is this used?
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
+        canvasColor: Colors.lightGreen
       ),
-      home: MyHomePage(),
+      home: HomeScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  // final String? title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
+/// Main game screen.
+class BlackjackGameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+    final localStrings = AppLocalizations.of(context)!;
+
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(localStrings.gameTitle),
+        ),
+        body: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+            child: Text(MessageFormat(localStrings.playerBet).format({"bet": "10"}),
+                textAlign: TextAlign.center,
+                style: Theme.of(context).primaryTextTheme.headline5)));
+  }
+}
+
+/// Show the rules of the game.
+class BlackjackRulesScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final localStrings = AppLocalizations.of(context)!;
+
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(localStrings.gameRulesLabel),
+        ),
+        body: Center(
+            child: Padding(
+                padding: EdgeInsets.all(30.0),
+                child: Text(localStrings.gameRulesText,
+                    style: Theme.of(context).primaryTextTheme.bodyText1))));
+  }
+}
+
+/// Settings screen.
+class BlackjackSettingsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final localStrings = AppLocalizations.of(context)!;
+
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(localStrings.settingsLabel),
+        ),
+        body: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+            child: Text(localStrings.settingsLabel)));
+  }
+}
+
+/// The app starts at this screen.
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // This method is rerun every time setState is called.
+    final localStrings = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(AppLocalizations.of(context)!.gameTitle),
+        title: Text(localStrings.gameTitle),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(AppLocalizations.of(context)!.gameWelcome),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+          Padding(
+              padding: EdgeInsets.all(6.0),
+                child: Text(localStrings.gameWelcome,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).primaryTextTheme.headline3)),
+            Center(
+                heightFactor: 1.5,
+                child: Column(children: <Widget>[
+                  Padding(
+                      padding: EdgeInsets.only(bottom: 6.0),
+                      child: Text(
+                          MessageFormat(localStrings.playerBalance)
+                              .format({"balance": "500"}),
+                          style: Theme.of(context).primaryTextTheme.headline5)),
+                  Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Text(
+                          MessageFormat(localStrings.numberOfDecks)
+                              .format({"decks": "4"}),
+                          style: Theme.of(context).primaryTextTheme.headline5)),
+                  Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Text(
+                          MessageFormat(localStrings.shufflePercent)
+                              .format({"percent": "50"}),
+                          style: Theme.of(context).primaryTextTheme.headline5)),
+                  Padding(
+                      padding: EdgeInsets.only(top: 6.0),
+                      child: Text(
+                          MessageFormat(localStrings.dealSpeed)
+                              .format({"speed": "2"}),
+                          style: Theme.of(context).primaryTextTheme.headline5)),
+                ])),
+            Padding(
+                padding: EdgeInsets.only(bottom: 6.0),
+                child: ElevatedButton(
+                    child: Text(localStrings.playGameLabel),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return BlackjackGameScreen();
+                        }),
+                      );
+                    })),
+            Padding(
+                padding: EdgeInsets.all(6.0),
+                child: ElevatedButton(
+                    child: Text(localStrings.gameRulesLabel),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return BlackjackRulesScreen();
+                        }),
+                      );
+                    })),
+            Padding(
+                padding: EdgeInsets.only(top: 6.0),
+                child: ElevatedButton(
+                    child: Text(localStrings.settingsLabel),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return BlackjackSettingsScreen();
+                        }),
+                      );
+                    })),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: _incrementCounter,
+      //   tooltip: 'Increment',
+      //   child: Icon(Icons.add),
+      // ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

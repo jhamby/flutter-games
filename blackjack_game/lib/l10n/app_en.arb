@@ -9,24 +9,24 @@
 		"description": "Welcome text for the start screen.",
 		"type": "text"
 	},
-	"playerBalance": "Player Balance: \\$$balance",
+	"playerBalance": "Player Balance: ${balance}",
 	"@playerBalance": {
 		"description": "Text for player balance.",
 		"type": "text"
 	},
-	"numberOfDecks": "Number of decks: $decks",
+	"numberOfDecks": "Number of decks: {decks}",
 	"@numberOfDecks": {
-		"description": "Display the number of decks.",
+		"description": "Display the number of decks. TODO: fix plurals.",
 		"type": "text"
 	},
-	"shufflePercent": "Shuffle the deck at $percent%",
+	"shufflePercent": "Shuffle the deck at {percent}%",
 	"@shufflePercent": {
 		"description": "Display the shuffle point, in percent.",
 		"type": "text"
 	},
-	"dealSpeed": "Deal $speed cards per second",
+	"dealSpeed": "Deal {speed} cards per second",
 	"@dealSpeed": {
-		"description": "Display the deal animation speed.",
+		"description": "Display the deal animation speed. TODO: fix plurals.",
 		"type": "text"
 	},
 	"playGameLabel": "Play Game",
@@ -54,8 +54,20 @@
 	"settingNumDecksLabel": "Number of decks",
 	"settingShufflePercent": "Shuffle the deck at",
 	"settingResetBalance": "Reset balance",
+	"playerBet": "Bet ${bet}",
 	"playButtonHit": "Hit",
 	"playButtonStand": "Stand",
 	"playButtonDouble": "Double Down",
-	"playButtonSplit": "Split"
+	"playButtonSplit": "Split",
+	"playerPrompt": "Your turn",
+	"playerWins": "You win ${amount}",
+	"playerLoses": "You lose ${amount}",
+	"playerPushes": "Push",
+	"playerBlackjack": "Blackjack! You win ${amount}",
+	"dealerInsurance": "Would you like to buy insurance?",
+	"dealerBlackjack": "Dealer has Blackjack! You lose ${amount}",
+	"dealerBlackjackInsurance": "Dealer has Blackjack! Your insurance paid for your bet.",
+	"dealerNoBlackjackInsurance": "Dealer doesn't have Blackjack. You lose your insurance bet.",
+	"playerTotal": "Hand {hand} Total: {total}",
+	"dealerTotal": "Dealer Total: {total}"
 }
